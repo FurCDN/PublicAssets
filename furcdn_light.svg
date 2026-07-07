@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="-100 -100 200 200">
+  <style>
+    .hex  { fill: none; stroke: #0a0a0a; stroke-linecap: round; stroke-linejoin: round; }
+    .core { fill: #0a0a0a; stroke: none; }
+    #h1 { stroke-dasharray: 326; animation: draw1 3s cubic-bezier(0.4,0,0.2,1) infinite; }
+    #h2 { stroke-dasharray: 216; animation: draw2 3s cubic-bezier(0.4,0,0.2,1) infinite; }
+    #h3 { animation: fade3 3s ease infinite; }
+    @keyframes draw1 {
+      0%   { stroke-dashoffset: 326; }
+      30%  { stroke-dashoffset: 0; }
+      95%  { stroke-dashoffset: 0; }
+      100% { stroke-dashoffset: 326; }
+    }
+    @keyframes draw2 {
+      0%, 23% { stroke-dashoffset: 216; }
+      47%     { stroke-dashoffset: 0; }
+      95%     { stroke-dashoffset: 0; }
+      100%    { stroke-dashoffset: 216; }
+    }
+    @keyframes fade3 {
+      0%, 40% { opacity: 0; }
+      50%     { opacity: 1; }
+      95%     { opacity: 1; }
+      100%    { opacity: 0; }
+    }
+  </style>
+  <polygon id="h1" class="hex" points="0,-54 47,-27 47,27 0,54 -47,27 -47,-27" stroke-width="4" opacity="0.65"/>
+  <polygon id="h2" class="hex" points="0,-36 31,-18 31,18 0,36 -31,18 -31,-18" stroke-width="0.7" opacity="0.7"/>
+  <polygon id="h3" class="core" points="0,-16 14,-8 14,8 0,16 -14,8 -14,-8"/>
+</svg>
